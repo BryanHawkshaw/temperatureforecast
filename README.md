@@ -106,23 +106,6 @@ The MAE (mean absolute error) of these models are:
 The SeasonalNaive baseline model has a lower mean absolute error than Excel's forecast meaning its more accurate. This is great as another benchmark to use for our next model. Now onto to ARIMA and SARIMA.
 The ARIMA and SARIMA (by adding seasonality to the ARIMA model) is gotten from the StatsForecast library.
 
-unique_id = 'temp_series'
-small_train = train[train['unique_id'] == unique_id]
-small_test = test[test['unique_id'] == unique_id]
+<img width="1600" height="860" alt="timemovesslow ipynb - EXP2 - Visual Studio Code  Administrator  01_09_2025 15_14_58" src="https://github.com/user-attachments/assets/606dafc9-0dc3-4160-a9df-3c8081c6d34d" />
 
-models = [
-    AutoARIMA(seasonal=False, alias = "ARIMA"),
-    AutoARIMA(season_length=7, alias="SARIMA")
-]
-
-sf = StatsForecast(models=models, freq="D")
-sf.fit(df=small_train)
-arima_preds = sf.predict(h=horizon)
-
-arima_eval_df = pd.merge(arima_preds, eval_df, 'inner', ['ds','unique_id'])
-arima_eval = evaluate(
-    arima_eval_df,
-    metrics=[mae],
-)
-arima_eval
 
