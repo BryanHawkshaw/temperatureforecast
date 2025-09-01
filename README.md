@@ -58,4 +58,39 @@ Microsoft Excel has this feature called Forecast Sheet. This forecast sheet uses
 This was a good starting place. Next, Auto Regressive Intergrated Moving Average (ARIMA), Seasonal Auto Regressive Intergrated Moving Average (SARIMA) and Prophet from Facebook models over at Python
 
 # 2) ARIMA and SARIMA
-ARIMA (Autoregressive Integrated Moving Average) models are statistical tools for time series forecasting that analyze past values, but they are best for non-seasonal data. SARIMA (Seasonal Autoregressive Integrated Moving Average) models extend ARIMA by incorporating an additional seasonal component to account for repeating patterns like monthly or yearly cycles, making them suitable for data with seasonality, such as hotel occupancy rates or monthly temperature data. For this dataset, it woould be best to use SARIMA but to highlight differences both models will be utilized.
+ARIMA (Autoregressive Integrated Moving Average) models are statistical tools for time series forecasting that analyze past values, but they are best for non-seasonal data. SARIMA (Seasonal Autoregressive Integrated Moving Average) models extend ARIMA by incorporating an additional seasonal component to account for repeating patterns like monthly or yearly cycles, making them suitable for data with seasonality, such as hotel occupancy rates or monthly temperature data. For this dataset, it woould be best to use SARIMA due the daily seasonality being present but to highlight differences both models will be utilized. This dataset contains only two columns hence there's no need to worry about exogenous factors or correlation of variables. 
+
+<img width="1189" height="790" alt="image" src="https://github.com/user-attachments/assets/1018630e-ccdc-4c1b-9144-9928d3e58269" />
+
+Before introducing ARIMA and SARIMA, it would be a good idea to see how our baseline models perform. These models include: 
+a) Naive
+b) SeasonalNaive
+c) Historical Average
+d) Moving Average
+
+The MAE (mean absolute error) of these models are:
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>metric</th>
+      <th>Naive</th>
+      <th>HistoricAverage</th>
+      <th>WindowAverage</th>
+      <th>SeasonalNaive</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>mae</td>
+      <td>3.9</td>
+      <td>2.727477</td>
+      <td>0.746939</td>
+      <td>1.628571</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
