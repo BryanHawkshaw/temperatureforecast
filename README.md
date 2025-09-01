@@ -44,3 +44,24 @@ A preview of the dataset:
   </tbody>
 </table>
 </div>
+
+
+For this project different tools and time series forecast models were used. 
+
+#1) MICROSOFT EXCEL'S FORECAST SHEET
+This algorithm, often referred to as the Holt Winters method, effectively handles additive trends, seasonality and smoothing of data to provide forecasts based on historical patterns. A confidence interval of 80% was used. The resulting forecast and its statistics are:
+
+<img width="1008" height="484" alt="image" src="https://github.com/user-attachments/assets/7172c700-2fd1-4c6a-8c3f-1745ee404fd5" />
+
+Statistic	Value
+Alpha	0.25
+Beta	0.00
+Gamma	0.25
+MASE	0.97
+SMAPE	0.21
+MAE	2.10
+RMSE	2.64
+<img width="130" height="161" alt="image" src="https://github.com/user-attachments/assets/dfe04fcd-89f5-4395-bb86-281f1877806d" />
+
+This was a good starting place.
+
