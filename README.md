@@ -288,6 +288,7 @@ The Prophet time series model, from Meta, decomposes a time series into trend, y
 
 <img width="886" height="889" alt="image" src="https://github.com/user-attachments/assets/dcf4e522-fce7-45c5-a5ad-29206b185091" />
 
+# Cross Validation
 
 When cross validation is then applied using the same cutoff used earlier, the resulting plot is like so: 
 
