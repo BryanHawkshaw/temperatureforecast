@@ -103,10 +103,44 @@ The MAE (mean absolute error) of these models are:
 </table>
 </div>
 
-The SeasonalNaive baseline model has a lower mean absolute error than Excel's forecast meaning its more accurate. This is great as another benchmark to use for our next model. Now onto to ARIMA and SARIMA.
+The SeasonalNaive baseline model has a lower mean absolute error than Excel's forecast meaning its more accurate. This is great as another benchmark to use for our next model. 
+
+Now onto to ARIMA and SARIMA.
+
 The ARIMA and SARIMA (by adding seasonality to the ARIMA model) is gotten from the StatsForecast library.
 
 <img width="1366" height="503" alt="image" src="https://github.com/user-attachments/assets/9c9f9017-fe29-4d42-97f6-3c1a481c6814" />
+
+The mean absolute error would be the only metric used to measure the model's accuracy. 
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>metric</th>
+      <th>ARIMA</th>
+      <th>SARIMA</th>
+      <th>Naive</th>
+      <th>HistoricAverage</th>
+      <th>WindowAverage</th>
+      <th>SeasonalNaive</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>mae</td>
+      <td>2.284992</td>
+      <td>2.10385</td>
+      <td>3.9</td>
+      <td>2.727477</td>
+      <td>0.746939</td>
+      <td>1.628571</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 
 
