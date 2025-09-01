@@ -279,6 +279,241 @@ The Mean Absolute Error (MAE), Mean Absolute Percentage Error (MAPE), Mean Squar
 </div>
 
 # 3) PROPHET
-The Prophet time series model, from Meta, decomposes a time series into trend, yearly, weekly, and daily seasonality, and holiday effects, and is particularly useful for data with strong seasonal patterns, missing data, and outliers. 
+The Prophet time series model, from Meta, decomposes a time series into trend, yearly, weekly, and daily seasonality, and holiday effects, and is particularly useful for data with strong seasonal patterns, missing data, and outliers. When future values for a year are predicted, we get a plot like so:
+
+<img width="990" height="590" alt="image" src="https://github.com/user-attachments/assets/31224ebd-b4b6-43f6-b202-7cd6078ff763" />
+
+<img width="886" height="889" alt="image" src="https://github.com/user-attachments/assets/dcf4e522-fce7-45c5-a5ad-29206b185091" />
+
+
+When cross validation is then applied using the same cutoff used earlier, the resulting plot is like so: 
+
+<img width="989" height="590" alt="image" src="https://github.com/user-attachments/assets/b1891f9c-8ec4-472b-912c-ce0e6a5f23e1" />
+
+The perfomance metrics of the first five rows of this cross validation are:
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>horizon</th>
+      <th>mse</th>
+      <th>rmse</th>
+      <th>mae</th>
+      <th>mape</th>
+      <th>mdape</th>
+      <th>smape</th>
+      <th>coverage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5 days</td>
+      <td>17.844728</td>
+      <td>4.224302</td>
+      <td>3.426022</td>
+      <td>0.199002</td>
+      <td>0.192404</td>
+      <td>0.229538</td>
+      <td>0.6</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>6 days</td>
+      <td>13.879526</td>
+      <td>3.725524</td>
+      <td>3.017434</td>
+      <td>0.223897</td>
+      <td>0.192404</td>
+      <td>0.225933</td>
+      <td>0.6</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>7 days</td>
+      <td>4.965177</td>
+      <td>2.228268</td>
+      <td>1.685708</td>
+      <td>0.154633</td>
+      <td>0.085757</td>
+      <td>0.142033</td>
+      <td>0.8</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>8 days</td>
+      <td>3.433108</td>
+      <td>1.852865</td>
+      <td>1.304682</td>
+      <td>0.131484</td>
+      <td>0.076658</td>
+      <td>0.115399</td>
+      <td>0.8</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>9 days</td>
+      <td>3.974670</td>
+      <td>1.993657</td>
+      <td>1.530976</td>
+      <td>0.145994</td>
+      <td>0.085757</td>
+      <td>0.131222</td>
+      <td>0.8</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+The last five rows are:
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>horizon</th>
+      <th>mse</th>
+      <th>rmse</th>
+      <th>mae</th>
+      <th>mape</th>
+      <th>mdape</th>
+      <th>smape</th>
+      <th>coverage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>47</th>
+      <td>52 days</td>
+      <td>4.674090</td>
+      <td>2.161964</td>
+      <td>1.452697</td>
+      <td>0.131337</td>
+      <td>0.044491</td>
+      <td>0.113133</td>
+      <td>0.8</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>53 days</td>
+      <td>4.875450</td>
+      <td>2.208042</td>
+      <td>1.591150</td>
+      <td>0.141638</td>
+      <td>0.078920</td>
+      <td>0.122909</td>
+      <td>0.8</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>54 days</td>
+      <td>1.178939</td>
+      <td>1.085790</td>
+      <td>0.940395</td>
+      <td>0.070272</td>
+      <td>0.078920</td>
+      <td>0.067081</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>55 days</td>
+      <td>0.810778</td>
+      <td>0.900432</td>
+      <td>0.804597</td>
+      <td>0.056935</td>
+      <td>0.064717</td>
+      <td>0.055798</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>56 days</td>
+      <td>1.529449</td>
+      <td>1.236709</td>
+      <td>1.164728</td>
+      <td>0.084802</td>
+      <td>0.078920</td>
+      <td>0.081682</td>
+      <td>1.0</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+The Mean Absolute Squared Error will also be included:
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mase</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.403013</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.429223</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.429314</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.438160</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.501666</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mase</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>47</th>
+      <td>1.827655</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>1.974522</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>2.056712</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>2.392583</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>2.483410</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+Plotting this metric results in:
+<img width="846" height="525" alt="image" src="https://github.com/user-attachments/assets/143159d4-0f8a-4f91-aada-8d62b590a32e" />
+
+
 
 
