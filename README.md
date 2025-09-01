@@ -142,5 +142,142 @@ The mean absolute error would be the only metric used to measure the model's acc
 </table>
 </div>
 
+<img width="1742" height="361" alt="image" src="https://github.com/user-attachments/assets/7eab8157-e853-4d3c-bf27-62f2954feab1" />
+
+So the SARIMA model has the same MAE score as the Excel Forecast Sheet model. 
+
+Cross Validation will now be applied to further ensure these models work on newer data. 
+
+# Cross Validation 
+
+Cross-validation is a statistical technique used to assess a model's performance and its ability to generalize to new, unseen data. It works by repeatedly splitting the dataset into training and testing sets, allowing the model to be trained on one part and validated on another, a process that is iterated to provide a more reliable performance estimate. The primary goal of cross-validation is to prevent overfitting, ensuring the model doesn't just "memorize" the training data but can adapt to real-world data. In time series forecasting, cross validation can be achieved introducing a cutoff on the time series and data before this cutoff is used an the training section and after the cut off is what the model is validated on. The cutoff will be set on 1990-11-05. The result of the cross validation technique is:
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>unique_id</th>
+      <th>ds</th>
+      <th>cutoff</th>
+      <th>y</th>
+      <th>SeasonalNaive</th>
+      <th>ARIMA</th>
+      <th>SARIMA</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>temp_series</td>
+      <td>1990-11-06</td>
+      <td>1990-11-05</td>
+      <td>18.3</td>
+      <td>14.9</td>
+      <td>12.798342</td>
+      <td>13.048451</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>temp_series</td>
+      <td>1990-11-07</td>
+      <td>1990-11-05</td>
+      <td>19.2</td>
+      <td>14.8</td>
+      <td>12.347443</td>
+      <td>12.453626</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>temp_series</td>
+      <td>1990-11-08</td>
+      <td>1990-11-05</td>
+      <td>15.4</td>
+      <td>15.4</td>
+      <td>12.191058</td>
+      <td>12.319272</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>temp_series</td>
+      <td>1990-11-09</td>
+      <td>1990-11-05</td>
+      <td>13.1</td>
+      <td>11.8</td>
+      <td>11.990521</td>
+      <td>11.966940</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>temp_series</td>
+      <td>1990-11-10</td>
+      <td>1990-11-05</td>
+      <td>11.5</td>
+      <td>13.0</td>
+      <td>12.031094</td>
+      <td>11.730668</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+The cross validation plot results to:
+
+<img width="1791" height="361" alt="image" src="https://github.com/user-attachments/assets/8e7da855-e2b0-48ab-b088-6ab679fd3f48" />
+
+The Mean Absolute Error (MAE), Mean Absolute Percentage Error (MAPE), Mean Squared Error (MSE), Root Mean Squared Error (RMSE) and Symmetric Mean Absolute Percentage Error (SMAPE) will be the metrics used to measure the performance of the cross validation:
+
+<div>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>metric</th>
+      <th>SeasonalNaive</th>
+      <th>ARIMA</th>
+      <th>SARIMA</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>mae</td>
+      <td>2.789286</td>
+      <td>2.235611</td>
+      <td>2.183218</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>mape</td>
+      <td>0.209902</td>
+      <td>0.160493</td>
+      <td>0.157526</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>mse</td>
+      <td>12.917857</td>
+      <td>7.764852</td>
+      <td>7.333071</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>rmse</td>
+      <td>3.594142</td>
+      <td>2.786548</td>
+      <td>2.707964</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>smape</td>
+      <td>0.101092</td>
+      <td>0.084093</td>
+      <td>0.081926</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
 
 
