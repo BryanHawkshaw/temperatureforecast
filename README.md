@@ -49,7 +49,7 @@ A preview of the dataset:
 For this project different tools and time series forecast models were used. 
 
 # 1) MICROSOFT EXCEL'S FORECAST SHEET
-This algorithm, often referred to as the Holt Winters method, effectively handles additive trends, seasonality and smoothing of data to provide forecasts based on historical patterns. A confidence interval of 80% was used. The resulting forecast and its statistics are:
+Microsoft Excel has this feature called Forecast Sheet. This forecast sheet uses the AAA version of the Exponential Smoothing algorithm (placing more weight on last values in dataset to make predictions). This algorithm, often referred to as the Holt Winters method, effectively handles additive trends, seasonality and smoothing of data to provide forecasts based on historical patterns. A confidence interval of 80% was used. The resulting forecast and its statistics are:
 
 <img width="1008" height="484" alt="image" src="https://github.com/user-attachments/assets/7172c700-2fd1-4c6a-8c3f-1745ee404fd5" />
 
@@ -58,5 +58,4 @@ This algorithm, often referred to as the Holt Winters method, effectively handle
 This was a good starting place. Next, Auto Regressive Intergrated Moving Average (ARIMA), Seasonal Auto Regressive Intergrated Moving Average (SARIMA) and Prophet from Facebook models over at Python
 
 # 2) ARIMA and SARIMA
-
-
+ARIMA (Autoregressive Integrated Moving Average) models are statistical tools for time series forecasting that analyze past values, but they are best for non-seasonal data. SARIMA (Seasonal Autoregressive Integrated Moving Average) models extend ARIMA by incorporating an additional seasonal component to account for repeating patterns like monthly or yearly cycles, making them suitable for data with seasonality, such as hotel occupancy rates or monthly temperature data. For this dataset, it woould be best to use SARIMA but to highlight differences both models will be utilized.
