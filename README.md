@@ -55,5 +55,8 @@ This algorithm, often referred to as the Holt Winters method, effectively handle
 
 <img width="130" height="161" alt="image" src="https://github.com/user-attachments/assets/dfe04fcd-89f5-4395-bb86-281f1877806d" />
 
-This was a good starting place.
+This was a good starting place. Next, Auto Regressive Intergrated Moving Average (ARIMA), Seasonal Auto Regressive Intergrated Moving Average (SARIMA) and Prophet from Facebook models over at Python
+
+# 2) ARIMA and SARIMA
+
 
