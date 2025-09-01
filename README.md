@@ -64,9 +64,17 @@ ARIMA (Autoregressive Integrated Moving Average) models are statistical tools fo
 
 Before introducing ARIMA and SARIMA, it would be a good idea to see how our baseline models perform. These models include: 
 a) Naive
+
 b) SeasonalNaive
+
 c) Historical Average
+
 d) Moving Average
+
+A simple plot reveals : 
+
+<img width="1800" height="361" alt="image" src="https://github.com/user-attachments/assets/8259ccac-7d0e-433f-ab54-68847adf3368" />
+
 
 The MAE (mean absolute error) of these models are:
 <div>
