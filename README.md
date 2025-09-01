@@ -55,7 +55,7 @@ Microsoft Excel has this feature called Forecast Sheet. This forecast sheet uses
 
 <img width="130" height="161" alt="image" src="https://github.com/user-attachments/assets/dfe04fcd-89f5-4395-bb86-281f1877806d" />
 
-This was a good starting place. Next, Auto Regressive Intergrated Moving Average (ARIMA), Seasonal Auto Regressive Intergrated Moving Average (SARIMA) and Prophet from Facebook models over at Python
+This was a good starting place. Next, Auto Regressive Intergrated Moving Average (ARIMA), Seasonal Auto Regressive Intergrated Moving Average (SARIMA) and Prophet from Meta models over at Python
 
 # 2) ARIMA and SARIMA
 ARIMA (Autoregressive Integrated Moving Average) models are statistical tools for time series forecasting that analyze past values, but they are best for non-seasonal data. SARIMA (Seasonal Autoregressive Integrated Moving Average) models extend ARIMA by incorporating an additional seasonal component to account for repeating patterns like monthly or yearly cycles, making them suitable for data with seasonality, such as hotel occupancy rates or monthly temperature data. For this dataset, it woould be best to use SARIMA due the daily seasonality being present but to highlight differences both models will be utilized. This dataset contains only two columns hence there's no need to worry about exogenous factors or correlation of variables. 
@@ -278,6 +278,7 @@ The Mean Absolute Error (MAE), Mean Absolute Percentage Error (MAPE), Mean Squar
 </table>
 </div>
 
-
+# 3) PROPHET
+The Prophet time series model, from Meta, decomposes a time series into trend, yearly, weekly, and daily seasonality, and holiday effects, and is particularly useful for data with strong seasonal patterns, missing data, and outliers. 
 
 
