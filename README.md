@@ -63,6 +63,7 @@ ARIMA (Autoregressive Integrated Moving Average) models are statistical tools fo
 <img width="1189" height="790" alt="image" src="https://github.com/user-attachments/assets/1018630e-ccdc-4c1b-9144-9928d3e58269" />
 
 Before introducing ARIMA and SARIMA, it would be a good idea to see how our baseline models perform. These models include: 
+
 a) Naive
 
 b) SeasonalNaive
@@ -71,7 +72,7 @@ c) Historical Average
 
 d) Moving Average
 
-A simple plot reveals : 
+A simple plot reveals: 
 
 <img width="1800" height="361" alt="image" src="https://github.com/user-attachments/assets/8259ccac-7d0e-433f-ab54-68847adf3368" />
 
@@ -101,4 +102,6 @@ The MAE (mean absolute error) of these models are:
   </tbody>
 </table>
 </div>
+
+The SeasonalNaive baseline model has a lower mean absolute error than Excel's forecast meaning its more accurate. This is great as another benchmark to use for our next model. Now onto to ARIMA and SARIMA.
 
